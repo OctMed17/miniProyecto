@@ -9,10 +9,11 @@ import { PrincipalComponent } from './principal/principal.component';
 import { AvisosComponent } from './avisos/avisos.component';
 import {RouterModule, Routes} from'@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 const appRoutes : Routes=[
   {path:'', component: LoginComponent},
   {path:'principal', component: PrincipalComponent},
-  {path:'student',component:StudentComponent},
+  {path:'student/:id',component:StudentComponent},
   {path:'avisos/:id',component:AvisosComponent},
   {path:'teacher', component:TeacherComponent},
   {path:'login',component:LoginComponent}
@@ -30,7 +31,8 @@ const appRoutes : Routes=[
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
